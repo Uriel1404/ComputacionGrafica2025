@@ -132,10 +132,10 @@ int main() {
         glDrawArrays(GL_POINTS,0,7);
         
         //glDrawArrays(GL_LINES,0,2);
-        glDrawArrays(GL_LINE_LOOP,0,18);
+        //glDrawArrays(GL_LINE_LOOP,0,4);
         
-        //glDrawArrays(GL_TRIANGLES,0,18);
-        //glDrawElements(GL_TRIANGLES, 18,GL_UNSIGNED_INT,0);
+        //glDrawArrays(GL_TRIANGLES,0,3);
+        glDrawElements(GL_TRIANGLES, 18,GL_UNSIGNED_INT,0);
 
         
         
