@@ -1,4 +1,4 @@
-//Modelado Geometrico, práctica 2
+//Modelado Geometrico, práctica 3
 //Uriel Agustin Temich No.Cuenta 316046149
 //26 de Agosto del 2024
 
