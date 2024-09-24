@@ -104,18 +104,112 @@ int main()
 	GLfloat vertices[] =
 	{
 		// Positions            // Colors              // Texture Coords
-		-0.5f, -0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.0f,0.0f,
-		0.5f, -0.5f, 0.0f,	   1.0f, 1.0f,1.0f,		2.0f,0.0f,
-		0.5f,  0.5f, 0.0f,     1.0f, 1.0f,1.0f,	    2.0f,1.0f,
-		-0.5f,  0.5f, 0.0f,    1.0f, 1.0f,1.0f,		2.0f,1.0f,
+		/*-0.5f, -0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.0f,0.0f,
+		0.5f, -0.5f, 0.0f,	   1.0f, 1.0f,1.0f,		1.0f,0.0f,
+		0.5f,  0.5f, 0.0f,     1.0f, 1.0f,1.0f,	    1.0f,1.0f,
+		-0.5f,  0.5f, 0.0f,    1.0f, 1.0f,1.0f,		0.0f,1.0f,*/
 
+		////Position				//texture coords
+		//-0.5f, -0.5f, 0.5f,		0.0f, 0.333f,	//V0 - Frontal
+		//0.5f, -0.5f, 0.5f,		0.25f, 0.333f,	//V1
+		//0.5f, 0.5f, 0.5f,		0.25f, 0.666f,	//V5
+		//-0.5f, -0.5f, 0.5f,		0.0f, 0.333f,	//V0
+		//-0.5f, 0.5f, 0.5f,		0.0f, 0.666f,	//V4
+		//0.5f, 0.5f, 0.5f,		0.25f, 0.666f,	//V5
+
+		// Positions            // Colors              // Texture   frontal
+      -0.5f, -0.5f, 0.5f,     1.0f, 1.0f,1.0f,    0.0f,  0.333f, //v1
+       0.5f, -0.5f, 0.5f,     1.0f, 1.0f,1.0f,    0.25f, 0.333f, //v2
+       0.5f,  0.5f, 0.5f,     1.0f, 1.0f,1.0f,    0.25f, 0.666f, //v3
+      -0.5f,  -0.5f, 0.5f,    1.0f, 1.0f,1.0f,    0.0f,  0.333f, //v4
+	  -0.5f,  0.5f, 0.5f,    1.0f, 1.0f,1.0f,     0.0f,  0.666f,  //v5
+       0.5f,  0.5f, 0.5f,     1.0f, 1.0f,1.0f,    0.25,  0.666, //v6
+
+	 //  0.5f, -0.5f, -0.5f,		0.0f, 0.333f,	//V2 - Trasera
+		//-0.5f, -0.5f, -0.5f,	0.25f, 0.333f,	//V3
+		//-0.5f, 0.5f, -0.5f,		0.25f, 0.666f,	//V7
+		//0.5f, -0.5f, -0.5f,		0.0f, 0.333f,	//V2
+		//0.5f, 0.5f, -0.5f,		0.0f, 0.666f,	//V6
+		//-0.5f, 0.5f, -0.5f,		0.25f, 0.666f,	//V7
+
+//	Trasera 
+      0.5f, -0.5f, -0.5f,    1.0f, 1.0f,1.0f,     0.0f, 0.333,   //2
+      -0.5f, -0.5f, -0.5f,   1.0f, 1.0f,1.0f,     0.25f, 0.333f, //V3
+	  -0.5f, 0.5f, -0.5f,    1.0f, 1.0f,1.0f,     0.25f, 0.666f, //V7
+	  0.5f, -0.5f, -0.5f,    1.0f, 1.0f,1.0f,     0.0f, 0.333f, //V2
+	  0.5f, 0.5f, -0.5f,     1.0f, 1.0f,1.0f,     0.0f, 0.666f, //V6
+	  -0.5f, 0.5f, -0.5f,    1.0f, 1.0f,1.0f,     0.25f, 0.666f, //V7
+
+//	    0.5f, 0.5f, 0.5f,		0.75f, 0.666f,	//V5 - Der
+//		0.5f, -0.5f, 0.5f,		0.75f, 0.333f,	//V1
+//		0.5f, -0.5f, -0.5f,		1.0f, 0.333f,	//V2
+//		0.5f, 0.5f, 0.5f,		0.75f, 0.666f,	//V5
+//		0.5f, 0.5f, -0.5f,		1.0f, 0.666f,	//V6
+//		0.5f, -0.5f, -0.5f,		1.0f, 0.333f,	//V2
+////
+         0.5f, 0.5f,  0.5f,    1.0f, 1.0f,1.0f,      0.75f, 0.666f, //V5 - Der
+		 0.5f, -0.5f, 0.5f,    1.0f, 1.0f,1.0f,      0.75f, 0.333f, //V1
+		 0.5f, -0.5f, 0.5f,    1.0f, 1.0f,1.0f,      1.0f, 0.333f, //V2
+		 0.5f, 0.5f,  0.5f,    1.0f, 1.0f,1.0f,      0.75f, 0.666f, //V5
+		 0.5f, 0.5f,  -0.5f,   1.0f, 1.0f,1.0f,      1.0f, 0.666f, //V6
+		 0.5f, -0.5f, -0.5f,   1.0f, 1.0f,1.0f,      1.0f, 0.333f, //V2
+//
+ //-0.5f, 0.5f, 0.5f,		0.25f, 0.666f,	//V4 - Sup
+	//	0.5f, 0.5f, 0.5f,		0.5f, 0.666f,	//V5
+	//	0.5f, 0.5f, -0.5f,		0.5f, 1.0f,	//V6
+	//	-0.5f, 0.5f, 0.5f,		0.25f, 0.666f,	//V4
+	//	-0.5f, 0.5f, -0.5f,		0.25f, 1.0f,	//V7
+	//	0.5f, 0.5f, -0.5f,		0.5f, 1.0f,	//V6
+
+		//Superior
+         -0.5f, 0.5f, 0.5f,    1.0f, 1.0f,1.0f,        0.25, 0.666f, //V4 
+		  0.5f, 0.5f, -0.5f,   1.0f, 1.0f,1.0f,        0.5f, 0.666f, //V5
+		 -0.5f, 0.5f, 0.5f,    1.0f, 1.0f,1.0f,        0.5f, 1.0f, //V6
+		 -0.5f, 0.5f, 0.5f,    1.0f, 1.0f,1.0f,        0.25f, 0.666f, //V4
+		 -0.5f, 0.5f, -0.5f,   1.0f, 1.0f,1.0f,        0.25f, 1.0f, //V7
+		  0.5f, 0.5f, -0.5f,   1.0f, 1.0f,1.0f,        0.5f, 1.0f, //V6
+
+		//-0.5f, -0.5f, 0.5f,		0.25f, 0.0f,	//V0 - Inf
+		//-0.5f, -0.5f, -0.5f,	0.25f, 0.333f,	//V3
+		//0.5f, -0.5f, -0.5f,		0.5f, 0.333f,	//V2
+		//-0.5f, -0.5f, 0.5f,		0.25f, 0.0f,	//V0
+		//0.5f, -0.5f, -0.5f,		0.5f, 0.333f, // v2
+		//0.5f, -0.5f, 0.5f,		0.5f, 0.0f,//V1
+//
+          -0.5f, -0.5f, 0.5f,    1.0f, 1.0f,1.0f,      0.25f, 0.0f, //V0 - Inf
+		  -0.5f, -0.5f, -0.5f,   1.0f, 1.0f,1.0f,      0.25f, 0.333f, //V3
+		   0.5f, -0.5f, -0.5f,   1.0f, 1.0f,1.0f,      0.5f, 0.333f, //V2
+		  -0.5f, -0.5f, 0.5f,    1.0f, 1.0f,1.0f,      0.25f, 0.0f, //V0
+		   0.5f, -0.5f, -0.5f,   1.0f, 1.0f,1.0f,      0.5f, 0.333f, // v2
+		   0.5f, -0.5f, 0.5f,    1.0f, 1.0f,1.0f,      0.5f, 0.0f,//V1
+
+		//Inferior 
+
+		-0.5f, 0.5f, 0.5f,	     1.0f, 1.0f,1.0f,	0.5f, 0.666f,	//V4 - Izq
+		-0.5f, 0.5f, -0.5f,	     1.0f, 1.0f,1.0f,	0.25f, 0.666f,	//V7
+		-0.5f, -0.5f, -0.5f,	 1.0f, 1.0f,1.0f,   0.25f, 0.333f,	//V3
+		-0.5f, -0.5f, -0.5f,	 1.0f, 1.0f,1.0f,   0.25f, 0.333f,	//V3
+		-0.5f, 0.5f, 0.5f,	     1.0f, 1.0f,1.0f,   0.5f, 0.666f,	//V4
+		-0.5f, -0.5f, 0.5f,	     1.0f, 1.0f,1.0f,	0.5f, 0.333f,	//V0
 		
+
 	};
 
 	GLuint indices[] =
 	{  // Note that we start from 0!
-		0,1,3,
-		1,2,3
+		0,1,2,
+		3,4,5,
+		1,2,6,
+		1,5,6,
+		4,0,1,
+		4,5,1,
+		3,4,5,
+		3,6,5,
+		0,3,2,
+		0,2,1,
+		3,6,2,
+		2,3,0
+
 	
 	};
 
@@ -155,13 +249,13 @@ int main()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST_MIPMAP_NEAREST);
 	// Diffuse map
-	image = stbi_load("images/checker_Tex.png", &textureWidth, &textureHeight, &nrChannels,0);
+	image = stbi_load("images/Cubo.jpg", &textureWidth, &textureHeight, &nrChannels,0);
 	glBindTexture(GL_TEXTURE_2D, texture1);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, textureWidth, textureHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, textureWidth, textureHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
 	glGenerateMipmap(GL_TEXTURE_2D);
 	if (image)
 	{
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, textureWidth, textureHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, textureWidth, textureHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
 		glGenerateMipmap(GL_TEXTURE_2D);
 	}
 	else
@@ -210,7 +304,7 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		// Draw the light object (using light's vertex attributes)
 		glBindVertexArray(VAO);
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
 		glBindVertexArray(0);
 
 		// Swap the screen buffers
