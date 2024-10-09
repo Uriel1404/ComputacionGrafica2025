@@ -104,8 +104,11 @@ float vertices[] = {
 
 glm::vec3 Light1 = glm::vec3(0);
 //Anim
-float rotBall = (30);
-bool AnimBall = true;
+float rotBall = 2;
+bool AnimBall = true ;
+float AscendenteDescendente = 1;
+float sentido = 0.0f;
+
 
 
 // Deltatime
@@ -299,7 +302,7 @@ int main()
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "transparency"), 1);
-		model = glm::rotate(model, glm::radians(rotBall), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(rotBall), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 	    Ball.Draw(lightingShader); 
 		glDisable(GL_BLEND);  //Desactiva el canal alfa 
@@ -443,15 +446,25 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 	if (keys[GLFW_KEY_N])
 	{
 		//nAnimBall = !AnimBall;
-		if (-100.0f < rotBall)
-		rotBall += 0.8f;
+		/*if (-100.0f < rotBall)
+		rotBall += 0.8f;*/
 		
 	}
 }
-//void Animation() {
-//	if (-100.0f < rotBall)
-//		rotBall += 0.8f;
-	//if (AnimBall)
+void Animation() {
+	//	if (-100.0f < rotBall)
+	//		rotBall += 0.8f;
+	if (AnimBall){
+		AscendenteDescendente += 0.1 * sentido;
+
+	if (AscendenteDescendente >= 2.0f);
+	AscendenteDescendente = 2.0f;
+	sentido = -1;
+    }
+    else if (AscendenteDescendente <= 0.0f){
+	AscendenteDescendente = 0.0f;
+	sentido = 1;
+
 	//{
 	//	rotBall += 0.2f;
 	//	// 
